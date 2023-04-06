@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: guestbook
+  name: client-service
 spec:
   generators:
   - clusters: {}
   template:
     metadata:
-      name: '{{name}}-guestbook'
+      name: '{{name}}-client-service'
     spec:
       project: "default"
       source:
@@ -16,4 +16,4 @@ spec:
         path: guestbook
       destination:
         server: '{{server}}'
-        namespace: guestbook
+        namespace: "default"
